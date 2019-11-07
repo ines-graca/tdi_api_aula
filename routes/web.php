@@ -16,6 +16,14 @@
  */
 Route::get('/', 'MainController@index')->name('index');
 
+Route::get('/list', 'MainController@list')->name('list');
+
+Route::get('/insert-post', 'MainController@form')->name('insert-form');
+Route::post('/insert-post', 'MainController@insert')->name('insert-post');
+
+
+
+
 /**
  *  Auth & Registration
  */
