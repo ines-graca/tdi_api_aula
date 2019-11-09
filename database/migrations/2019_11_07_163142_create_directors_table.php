@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterPostsTable extends Migration
+class CreateDirectorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class AlterPostsTable extends Migration
      */
     public function up()
     {
-        //
-        Schema::table('posts', function (Blueprint $table){
-          //  $table ->softDeletes();
-
+        Schema::create('directors', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->timestamps();
+            $table->string('title');
         });
-
     }
 
     /**
@@ -28,6 +27,6 @@ class AlterPostsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('directors');
     }
 }

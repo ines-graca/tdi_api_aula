@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterPostsTable extends Migration
+class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class AlterPostsTable extends Migration
      */
     public function up()
     {
-        //
-        Schema::table('posts', function (Blueprint $table){
-          //  $table ->softDeletes();
-
+        Schema::create('countries', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->timestamps();
         });
-
     }
 
     /**
@@ -28,6 +26,6 @@ class AlterPostsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('countries');
     }
 }

@@ -23,15 +23,14 @@ class CreateMoviesTable extends Migration
             $table->integer('rating');
             $table->string('image');
 
-            $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categorys');
+            $table->bigInteger('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
 
-            $table->integer('country_id')->unsigned();
-            $table->foreign('country_id')->references('id')->on('countrys');
+            $table->bigInteger('country_id')->unsigned();
+            $table->foreign('country_id')->references('id')->on('countries');
 
-            $table->integer('director_id')->unsigned();
+            $table->bigInteger('director_id')->unsigned();
             $table->foreign('director_id')->references('id')->on('directors');
-
 
 
         });
