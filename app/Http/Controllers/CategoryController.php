@@ -26,7 +26,6 @@ class CategoryController extends Controller
             'message' => 'Operation Successful',
             'data' => $result
 
-
         ];
 
         return response($message, 200)
