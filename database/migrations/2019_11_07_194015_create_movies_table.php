@@ -32,6 +32,9 @@ class CreateMoviesTable extends Migration
             $table->bigInteger('director_id')->unsigned();
             $table->foreign('director_id')->references('id')->on('directors');
 
+            $table->timestamps();
+            $table->softDeletes();
+
 
         });
     }

@@ -44,4 +44,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backoffice', 'middleware' => 
 
         Route::resource('user', 'UserController');
     }
+
+
 );
+
+Route::name('web.')->group(function (){
+
+    Route::resource('movies', 'WebMovieController');
+    Route::resource('directors', 'WebDirectorController');
+    Route::resource('category', 'WebCategoryController');
+    Route::resource('country', 'WebCountryController');
+
+
+});

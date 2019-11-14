@@ -19,3 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::resource('post','PostController');
+Route::resource('country','CountryController');
+Route::resource('director','DirectorController');
+Route::resource('movies','MovieController');
+Route::resource('category','CategoryController');
