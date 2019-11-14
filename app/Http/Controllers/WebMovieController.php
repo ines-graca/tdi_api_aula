@@ -142,5 +142,9 @@ $countries = Country::all();
     public function destroy(Movie $movie)
     {
         //
+        $movie->delete();
+
+        return redirect()->route('web.movies.index')->withErrors(['success'=> 'Movie deleted with success!']);
+
     }
 }

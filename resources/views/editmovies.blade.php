@@ -63,7 +63,7 @@
                     <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
 
                     <div class="col-md-6">
-                        <img src="/uploads/{{$movie->image}}">
+                        <img src="/uploads/{{$movie->image}}" style="max-height: 350px; max-width: 250px;">
                         <input id="image" type="file" class="form-control @error('title') is-invalid @enderror"
                                name="image" autocomplete="image" autofocus>
 
