@@ -55,5 +55,4 @@ Route::name('web.')->group(function (){
     Route::resource('category', 'WebCategoryController');
     Route::resource('country', 'WebCountryController');
 
-
 });

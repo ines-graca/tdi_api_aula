@@ -6,6 +6,7 @@ use App\Category;
 use App\Country;
 use App\Director;
 use App\Http\Requests\WebMovieStorageRequest;
+use App\Http\Requests\WebUpdateRequest;
 use App\Movie;
 use Illuminate\Http\Request;
 
@@ -91,8 +92,14 @@ class WebMovieController extends Controller
     public function edit(Movie $movie)
     {
         /* mostrar o elemento */
-
+$categories = Category::all();
+$directors = Director::all();
+$countries = Country::all();
         //
+        return view('editmovies')->with('movie', $movie)
+          ->with('categories', $categories)
+            -> with('directors', $directors)
+            -> with('countries', $countries);
     }
 
     /**
@@ -102,9 +109,32 @@ class WebMovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movie $movie)
+    public function update(WebUpdateRequest $request, Movie $movie)
     {
         /* sá update só a um movie) */
+
+        $data = $request->all();
+
+
+
+        if ($request->hasFile('image') ) {
+
+            if($request->get('image') !== $movie['image']){
+
+                $file = $request->file('image')->store('images');
+
+                $data['image'] = $file;
+            }
+
+
+        }
+
+        $movie->update($data);
+
+
+        return redirect()->route('web.movies.index');
+
+
     }
 
     /**

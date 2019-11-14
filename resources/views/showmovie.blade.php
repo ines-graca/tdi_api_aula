@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     <h1 class="h3 mb-2 text-gray-800">{{ $movie->title }}</h1>
 
     <div class="row">
@@ -13,9 +14,16 @@
             </div>
         </div>
 
+
         <div class="col-md-8 text">
             <div class="card mb-4 py-3 border-left-primary">
                 <div class="card-body">
+
+                    <div class="col-md-4 text-left">
+                        <a href="{{$movie->id}}/edit">
+                             <button class="btn btn-primary">Edit</button>
+                        </a>
+                    </div>
 
                     <div class="row">
                         <div class="col-md-3 text-black-50 text-md-right">{{ __('Title') }}</div>
@@ -76,10 +84,16 @@
                         </div>
                     </div>
 
+<br>
+
+
 
 
                 </div>
             </div>
         </div>
+
+
+
     </div>
 @endsection

@@ -28,7 +28,7 @@
                     </p>
 <h5>
 
-                    <a href="{{'web.movies'}}">  <img src="uploads/{{$movie->image}}" height="300" width="210"/><p></p></a>
+                    <a href="movies/{{($movie->id)}}">  <img src="uploads/{{$movie->image}}" height="300" width="210"/><p></p></a>
 
     {{$movie->year}}
 
@@ -37,7 +37,7 @@
                    </a>
                 </div>
                 @endforeach
-            </div>z
+            </div>
 
 
         </div>
