@@ -1,7 +1,7 @@
 @extends('layouts.bo')
 
 @section('content')
-
+    @if(Auth::check())
     <div class="row">
         <div class="col-md-8">
             <h1 class="h3 mb-2 text-gray-800">Movies</h1>
@@ -19,6 +19,7 @@
 
 
     </div>
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -46,5 +47,10 @@
 
         </div>
     </div>
+        @else
+        <h2>
+            Não tem sessão iniciada!
+        </h2>
+    @endif
 
 @endsection
