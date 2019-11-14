@@ -131,10 +131,7 @@ $countries = Country::all();
 
         $movie->update($data);
 
-
         return redirect()->route('web.movies.index');
-
-
     }
 
     /**
