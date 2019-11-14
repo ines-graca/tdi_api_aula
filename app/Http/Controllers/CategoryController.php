@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
 
+
+/**
+ * @group CategoryManagement
+ */
 class CategoryController extends Controller
 {
     /**

@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Director;
 use Illuminate\Http\Request;
 
+/**
+ * @group DirectorManagement
+ */
+
 class DirectorController extends Controller
 {
     /**

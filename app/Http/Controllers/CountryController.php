@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Country;
 use Illuminate\Http\Request;
 
+/**
+ * @group CountryManagement
+ */
+
 class CountryController extends Controller
 {
     /**

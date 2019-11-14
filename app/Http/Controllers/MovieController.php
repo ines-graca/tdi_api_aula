@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Movie;
 use Illuminate\Http\Request;
 
+
+/**
+ * @group MovieManagement
+ */
 class MovieController extends Controller
 {
     /**
