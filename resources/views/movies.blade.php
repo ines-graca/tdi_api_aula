@@ -6,11 +6,15 @@
         <div class="col-md-8">
             <h1 class="h3 mb-2 text-gray-800">Movies</h1>
         </div>
+        @if(Auth::check())
+            @if(Auth::user()->role->id === 1)
         <div class="col-md-4 text-right">
             <a href="{{ route('web.movies.create') }}">
                 <button class="btn btn-primary">Add new</button>
             </a>
         </div>
+            @endif
+            @endif
 
 
 

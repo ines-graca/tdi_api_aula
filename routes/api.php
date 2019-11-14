@@ -15,11 +15,15 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+
+});
+
+Route::group(['middleware' => 'auth:api'], function(){
+    Route::resource('post','PostController');
+    Route::resource('country','CountryController');
+    Route::resource('director','DirectorController');
+    Route::resource('movies','MovieController');
+    Route::resource('category','CategoryController');
 });
 
 
-Route::resource('post','PostController');
-Route::resource('country','CountryController');
-Route::resource('director','DirectorController');
-Route::resource('movies','MovieController');
-Route::resource('category','CategoryController');

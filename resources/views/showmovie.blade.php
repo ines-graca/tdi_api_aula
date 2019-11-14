@@ -4,8 +4,10 @@
 
 
     <h1 class="h3 mb-2 text-gray-800">{{ $movie->title }}</h1>
-
     <div class="row">
+
+
+
         <div class="col-md-4">
             <div class="card mb-4 py-3 border-left-primary">
                 <div class="card-body text-center">
@@ -19,14 +21,18 @@
             <div class="card mb-4 py-3 border-left-primary">
                 <div class="card-body">
 
+                    @if(Auth::check())
+                        @if(Auth::user()->role->id === 1)
                     <div class="col-md-4 text-left">
                         <a href="{{$movie->id}}/edit">
                              <button class="btn btn-primary">Edit</button>
                         </a>
 
+
                         <button class="btn btn-danger btn-md" data-toggle="modal" data-target="#modall"><i class="fa fa-trash"></i></button>
 
-
+                        @endif
+                        @endif
                     </div>
 
                     <div class="modal" tabindex="-1" id='modall' role="dialog">

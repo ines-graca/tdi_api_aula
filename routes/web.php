@@ -56,3 +56,6 @@ Route::name('web.')->group(function (){
     Route::resource('country', 'WebCountryController');
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
