@@ -133,7 +133,6 @@ $countries = Country::all();
 
         return redirect()->route('web.movies.index');
     }
-
     /**
      * Remove the specified resource from storage.
      *
